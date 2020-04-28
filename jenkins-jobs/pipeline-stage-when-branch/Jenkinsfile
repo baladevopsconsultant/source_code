@@ -10,9 +10,9 @@ pipeline{
                 
             }
         }
-        stage('Dev'){
+        stage('Jen'){
             when{
-                branch 'dev'
+                branch 'jenkins'
             }
             steps{
                 echo "Hey this is Dev Branch"
