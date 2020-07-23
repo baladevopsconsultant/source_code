@@ -7,10 +7,11 @@ pipeline{
     stages{
         stage('Build'){
             when{
-                buildingTag()
+                //buildingTag()
+                tag "4.0"
             }
             steps{
-                echo "Hey I am executing when the this is tagged"
+                echo "Hey I am executing when the this is tagged from 4.0"
             }
         }
     }
