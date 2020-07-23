@@ -1,5 +1,9 @@
 pipeline{
-    agent ansible-maa-01
+    agent{
+     node{
+      label 'ansible-maa-01'
+      }
+    }
     stages{
         stage('Build'){
             when{
