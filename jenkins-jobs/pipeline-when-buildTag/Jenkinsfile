@@ -1,5 +1,5 @@
 pipeline{
-    agent any
+    agent ansible-maa-01
     stages{
         stage('Build'){
             when{
