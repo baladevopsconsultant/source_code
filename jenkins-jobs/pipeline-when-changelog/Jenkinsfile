@@ -3,14 +3,14 @@ pipeline{
         node{
             label "ansible-maa-01"
         }
-        stages{
-            stage('First'){
-                when{
+    }
+    stages{
+        stage('First'){
+            when{
                     changelog ".*changelog.*"
-                }
-                steps{
+            }
+            steps{
                     echo "commit is matching the expression so build is success"
-                }
             }
         }
     }
