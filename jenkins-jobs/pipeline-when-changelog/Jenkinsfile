@@ -1,0 +1,17 @@
+pipeline{
+    agent{
+        node{
+            label "ansible-maa-01"
+        }
+        stages{
+            stage('First'){
+                when{
+                    changelog ".*changelog.*"
+                }
+                steps{
+                    echo "commit is matching the expression so build is success"
+                }
+            }
+        }
+    }
+}
