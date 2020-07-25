@@ -8,7 +8,7 @@ pipeline{
         stage('First'){
             when{
                     //changeRequest()  //when there is pull request this code executes
-                    changeRequest Title:"when-pr"  //when there is pull request this code executes
+                    changeRequest title:"when-pr"  //when there is pull request this code executes
 
             }
             steps{
