@@ -7,7 +7,7 @@ pipeline{
     stages{
         stage('Build'){
             when{
-                changeset glob: "*.js"
+                changeset glob:"helloworld.js"
             }
             steps{
                 echo "Step has executed succefully as it has matched the file name *.js"
