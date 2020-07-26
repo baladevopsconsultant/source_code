@@ -1,1 +1,2 @@
 dummy text file
+second build inorder to have the .js file condition matched and build is executed with display of the success message
