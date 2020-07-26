@@ -1,0 +1,17 @@
+pipeline{
+    agent{
+        node{
+            label "ansible-maa-01"
+        }
+    }
+    stages{
+        stage('Build'){
+            when{
+                changeset glob: "*.js"
+            }
+            steps{
+                echo "Step has executed succefully as it has matched the file name *.js"
+            }
+        }
+    }
+}
