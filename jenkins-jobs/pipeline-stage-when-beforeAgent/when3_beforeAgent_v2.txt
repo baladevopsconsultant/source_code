@@ -1,0 +1,28 @@
+pipeline{
+    agent none
+    // agent{
+    //     label "ansible-maa-01"
+    // }
+    environment{
+        BALA= "good"
+    }
+    stages{
+        stage("Build"){
+            agent{
+                label "ansible-maa-01"
+            }
+            when{
+                //beforeAgent false //by default it is false
+                /*** when beforeAgent is true, then the when conditional gets exec 1st,if 
+                 * condition fails,then it wont take the label mentioned in the stage or agent 
+                 * mentioned in the stage, if true , it will take and try to execute the next***/
+                 
+                beforeAgent true
+                environment name: 'BALA',value: "nice"
+            }
+            steps{
+                echo "The Build is success"
+            }
+        }
+    }
+}
