@@ -1,0 +1,29 @@
+pipeline{
+    agent any 
+    stages{
+        stage('Parallel Jobs'){
+            failFast true
+            parallel{
+                stage('First Build'){
+                    steps{
+                        echo "First stage success"
+                        sleep 10
+                    }
+                }
+                stage('Second Build'){
+                    steps{
+                        echo "Second stage success"
+                        sleep 2
+                        error "Second Build Failed"
+                    }
+                }
+                stage('Third Build'){
+                    steps{
+                        echo "Third stage success"
+                        sleep 10
+                    }
+                }
+            }
+        }
+    }
+}
