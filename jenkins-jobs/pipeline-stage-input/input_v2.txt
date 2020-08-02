@@ -1,0 +1,19 @@
+pipeline{
+    agent any
+    stages{
+        stage('Build'){
+            input{
+                message "Display the submitter"
+                ok "OK"
+                submitterParameter "whoIsSubmitter"
+                parameters{
+                file(name:'BuildFile',description:'BuildFile Path') 
+                }
+            }
+            steps{
+                echo "The submitter is ${whoIsSubmitter}"
+                echo "File path ${BuildFile}"
+            }
+        }
+    }
+}
