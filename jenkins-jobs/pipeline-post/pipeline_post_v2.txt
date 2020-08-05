@@ -1,0 +1,41 @@
+pipeline{
+    agent any
+    stages{
+        stage("Build"){
+            steps{
+                //echo "Build is success"
+                script{
+                    //currentBuild.result = "UNSTABLE"
+                    currentBuild.result = "ABORTED"
+                }
+                //error("Failure")
+            }
+        }
+    }
+    post{
+        aborted{
+            echo "The current state is aborted so this condition is success"
+        }
+        // regression{
+        //     echo "Will run only if the build is UNS,FAIL,ABORT"
+        // }
+        // fixed{
+        //     echo "The Build is fixed from previous state"
+        // }
+        // changed{
+        //     echo "Build Status has changed from previous state"
+        // }
+        success{
+            echo "Build Success"
+        }
+        failure{
+            echo "Build Failure"
+        }
+        always{
+            echo "Build is success or failure"
+        }
+        cleanup{
+            echo "clean up script to be executed"
+        }
+    }
+}
