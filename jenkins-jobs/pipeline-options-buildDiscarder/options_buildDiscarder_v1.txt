@@ -1,0 +1,16 @@
+pipeline{
+    agent any 
+    options{
+        buildDiscarder(logRotator(numToKeepStr: '1'))
+    }
+    stages{
+        stage('Build'){
+            steps{
+                echo "There will be a logrotate and no of builds will be kept as value equivalent to 'nymToKeepstr"
+            }
+            
+            
+        }
+        
+    }
+}
