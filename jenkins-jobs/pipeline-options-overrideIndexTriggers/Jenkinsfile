@@ -7,7 +7,7 @@ pipeline{
     stages{
         stage('Build'){
             steps{
-                echo "Hello First Build - v5"
+                echo "Hello First Build - v6"
             }
         }
     }
