@@ -3,6 +3,8 @@ pipeline{
     options{
         timestamps()
         overrideIndexTriggers(true)
+    /*** In case of True - Build scheduled will take place, if false , for a commit the build schedule will not place instead a build should
+         be done mannually ***/
     }
     stages{
         stage('Build'){
