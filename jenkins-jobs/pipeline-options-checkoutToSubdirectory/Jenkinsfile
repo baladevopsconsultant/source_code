@@ -5,7 +5,10 @@ pipeline{
     }
     stages{
         stage('Build'){
-            echo "Build in a 'BK' workspace"
+            steps{
+                echo "Build in a 'BK' workspace"
+            }
+            
         }
     }
     
