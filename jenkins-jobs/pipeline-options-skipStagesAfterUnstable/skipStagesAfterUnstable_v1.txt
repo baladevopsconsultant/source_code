@@ -1,0 +1,23 @@
+pipeline{
+    agent any
+    // options{
+    //     // skipStagesAfterUnstable()
+    /*** This makes the subesquent stages skip or not run when an pervious build is unstable,i.e
+     * say if stage1 build is success, stage2 is failed, then stage3 or so will not be build - it will be skipped ***/
+    // }
+    stages{
+        stage('Build'){
+            steps{
+                script{
+                    currentBuild.result = 'UNSTABLE'
+                }
+                echo "The Build is Unstable"
+            }
+        }
+        stage('Deploy'){
+            steps{
+                echo "Deploy is running"
+            }
+        }
+    }
+}
